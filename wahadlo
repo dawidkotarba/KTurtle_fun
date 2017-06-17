@@ -1,0 +1,25 @@
+reset
+$iter = 0
+
+while true {
+clear
+$iter = $iter + 1
+fw 100
+tl 45
+fw 20
+
+repeat 3 {
+tr 45
+fw 10
+tr 45
+fw 20
+}
+tl 45
+fw 100
+tr 90
+fw 10
+tr 90
+
+$sindir = 100 * (sin $iter) - 180
+dir $sindir
+}

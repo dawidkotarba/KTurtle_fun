@@ -1,0 +1,61 @@
+learn drawCircle $size {
+ repeat 360 {
+ tr 1
+ fw $size
+ }
+}
+
+learn drawPointers $size {
+ dir 0
+ repeat 12 {
+ pu
+ fw $size * 3
+ pd
+ fw $size
+ pu
+ fw 0-$size * 4
+ tr 30
+ pd
+ }
+}
+
+learn drawClock {
+$initX = getx
+$initY = gety
+pu
+fw 100
+dir 90
+pd
+drawCircle 2
+dir 180
+pu
+fw 100
+pd
+dir 180
+pu
+fw 15
+dir 0
+pd
+drawPointers 25
+gox $initX
+goy $initY
+}
+
+learn drawHand $size {
+  pd
+  fw $size
+  pu
+  fw 0-$size
+ }
+}
+
+reset
+drawClock
+fw -15
+$angle = 0
+repeat 360 {
+ $angle = $angle + 1
+ tr $angle
+ drawHand 50
+ dir 0
+}
