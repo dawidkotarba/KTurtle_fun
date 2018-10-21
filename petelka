@@ -1,0 +1,11 @@
+reset
+penwidth 3
+$step = 1
+$greencolor = 0
+repeat 36000 {	
+fw $step
+tr 1
+$step = $step + 0.001
+$greencolor = $greencolor + 0.3
+pencolor 0,$greencolor,0
+}
